@@ -165,3 +165,17 @@ function renderTask(task) {
 	// Добавляем задачу на страницу
 	tasksList.insertAdjacentHTML('beforeend', taskHTML);
 }
+
+// -----------Full Screen--------------
+const full_screen = document.querySelector('body');
+full_screen.addEventListener('dblclick', () => {
+  if (document.documentElement.requestFullscreen) {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(err => {
+        console.error(`Errror ${err}`);
+      });
+    } else {
+      document.exitFullscreen();
+    }
+  }
+});
