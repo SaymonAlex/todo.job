@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
-  
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-  <link rel="icon" type="./image/svg" sizes="128x128" href="./img/leaf.svg">
-  <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" type="./image/png" sizes="128x128" href="./img/list.png">
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="manifest" href="./manifest.json">
   <title>Список Задач</title>
 </head>
 
 <body>
   <div class="container">
     <div class="box">
+      <div class="update_app" id="update_app">
+        <div class="text_update">➡ Доступно Обновление ⬅</div>
+        <div class="but_update"></div>
+      </div>
       <h2>Список задач</h2>
-      <!-- List of tasks -->
       <div class="card mb-4">
         <ul id="tasksList" class="list-group list-group-flush">
         </ul>
       </div>
-      <!-- //List of tasks -->
-      <!-- Form -->
       <div class="card bg-light">
         <div class="card-header">Добавить новую задачу</div>
         <div class="card-body">
@@ -35,7 +37,12 @@
       </div>
     </div>
   </div>
-  <script src="js/main.js"></script>
+  <script src="./app.js" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js');
+    }
+  </script>
 </body>
 
 </html>
