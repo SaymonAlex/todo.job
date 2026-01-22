@@ -1,11 +1,19 @@
 {
+  "id": "/smart-todo",
   "name": "Список задач",
   "short_name": "Задачи",
+  "description": "Веб-интерфейс для задач",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#2f363e",
   "theme_color": "#113156",
+  "lang": "ru",
+  "categories": [
+    "smart-todo",
+    "iot"
+  ],
   "icons": [
     {
       "src": "./icons/icon-192.png",
